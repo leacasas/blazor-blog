@@ -1,7 +1,16 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
+﻿
 /.vs
 /BlazorBlog/obj
 /BlazorBlog/bin
+/BlazorBlog.Core/obj
+/BlazorBlog.Core/bin
+/BlazorBlog.Core.Tests/obj
+/BlazorBlog.Core.Tests/bin
+/BlazorBlog.Infrastructure/obj
+/BlazorBlog.Infrastructure/bin
+/BlazorBlog.Infrastructure.Tests/obj
+/BlazorBlog.Infrastructure.Tests/bin
+/BlazorBlog.SharedKernel/obj
+/BlazorBlog.SharedKernel/bin
+/BlazorBlog.Tests/obj
+/BlazorBlog.Tests/bin
