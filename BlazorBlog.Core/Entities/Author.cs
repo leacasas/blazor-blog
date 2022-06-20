@@ -1,4 +1,4 @@
-﻿namespace BlazorBlog.Core;
+﻿namespace BlazorBlog.Core.Entities;
 
 public class Author
 {

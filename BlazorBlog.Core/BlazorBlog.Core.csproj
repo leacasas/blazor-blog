@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorBlog.SharedKernel\BlazorBlog.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>
