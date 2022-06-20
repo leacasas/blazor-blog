@@ -1,0 +1,44 @@
+﻿@page "/blog/{id:int}"
+
+@using BlazorBlog.Core.Entities
+@using BlazorBlog.Core.Interfaces
+
+@inject IBlogEntryRepository _repository;
+
+@if (_entryNotFound)
+{
+    <h5>Blog entry not found</h5>
+}
+else
+{
+    if(_blogEntry == null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        <PageTitle>@_blogEntry.Title</PageTitle>
+
+        @((MarkupString)_blogEntry.HtmlContent)
+
+        <p>Written by @_blogEntry.Author.FullName at @_blogEntry.Created.ToString()</p>
+    }
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private BlogEntry? _blogEntry;
+    private bool _entryNotFound = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _blogEntry = await _repository.GetByIdAsync(Id);
+
+        if(_blogEntry == null)
+        {
+            _entryNotFound = true;
+        }
+    }
+}

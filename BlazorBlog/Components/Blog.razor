@@ -1,4 +1,5 @@
 ﻿@page "/blog"
+
 @using BlazorBlog.Core.Entities
 @using BlazorBlog.Core.Interfaces
 
@@ -16,7 +17,10 @@ else
 {
     @foreach (var entry in _blogEntries)
     {
-        <h5>@entry.Title</h5>
+        var blogLink = $"blog/{@entry.Id}";
+        <NavLink href=@blogLink>
+            <h5>@entry.Title</h5>
+        </NavLink>
         <em>by @entry.Author.FullName</em>
     }
 }
