@@ -2,7 +2,7 @@
 
 namespace BlazorBlog.Infrastructure.Data;
 
-internal class InMemoryDataModel
+public class InMemoryDataModel
 {
     internal IList<BlogEntry> BlogEntries { get; set; }
     internal IList<Author> Authors { get; set; }
