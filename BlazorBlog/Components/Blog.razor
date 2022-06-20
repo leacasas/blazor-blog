@@ -1,0 +1,32 @@
+﻿@page "/blog"
+@using BlazorBlog.Core.Entities
+@using BlazorBlog.Core.Interfaces
+
+<PageTitle>Blog</PageTitle>
+
+@inject IBlogEntryRepository _repository;
+
+<h3>Blog</h3>
+
+@if (_blogEntries == null)
+{
+    <p><em>Loading blog entries...</em></p>
+}
+else
+{
+    @foreach (var entry in _blogEntries)
+    {
+        <h5>@entry.Title</h5>
+        <em>by @entry.Author.FullName</em>
+    }
+}
+
+@code
+{
+    private IEnumerable<BlogEntry>? _blogEntries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _blogEntries = await _repository.GetAllAsync();
+    }
+}

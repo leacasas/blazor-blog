@@ -1,12 +1,17 @@
+using BlazorBlog.Core.Interfaces;
 using BlazorBlog.Data;
+using BlazorBlog.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+/*---- Configure Service Container ----*/
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton<InMemoryDataModel>();
+builder.Services.AddSingleton<IBlogEntryRepository, BlogEntryInMemoryRepository>();
 
+/*---- Configure Application ----*/
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

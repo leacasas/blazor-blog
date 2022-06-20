@@ -7,7 +7,7 @@ public class InMemoryDataModel
     internal IList<BlogEntry> BlogEntries { get; set; }
     internal IList<Author> Authors { get; set; }
 
-    internal InMemoryDataModel()
+    public InMemoryDataModel()
     {
         var testAuthor = new Author()
         {
