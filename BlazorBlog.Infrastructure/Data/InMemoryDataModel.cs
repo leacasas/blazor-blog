@@ -20,10 +20,32 @@ public class InMemoryDataModel
         {
             new BlogEntry
             {
-                Id = 0,
+                Id = 1,
                 Title = "Test Blog Entry",
-                HtmlContent = "<h1>Test Blog Entry</h1><p>Lorem Ipson Dol Sit Amet</p>",
+                HtmlContent = "<h1>Test Blog Entry</h1><p>Lorem Ipsum Dol Sit Amet</p>",
                 Url = "test_blog_entry",
+                Created = DateTime.Now,
+                Author = testAuthor,
+                LastEdited = DateTime.Now,
+                LastEditor = testAuthor
+            },
+            new BlogEntry
+            {
+                Id = 2,
+                Title = "Second Test Blog Entry",
+                HtmlContent = "<h1>Second Test Blog Entry</h1><p>Lorem Ipsum Dol Sit Amet</p>",
+                Url = "second_test_blog_entry",
+                Created = DateTime.Now,
+                Author = testAuthor,
+                LastEdited = DateTime.Now,
+                LastEditor = testAuthor
+            },
+            new BlogEntry
+            {
+                Id = 3,
+                Title = "Third Test Blog Entry",
+                HtmlContent = "<h1>Third Test Blog Entry</h1><p>Lorem Ipsum Dol Sit Amet</p>",
+                Url = "third_test_blog_entry",
                 Created = DateTime.Now,
                 Author = testAuthor,
                 LastEdited = DateTime.Now,

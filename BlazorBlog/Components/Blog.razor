@@ -17,7 +17,7 @@ else
 {
     @foreach (var entry in _blogEntries)
     {
-        var blogLink = $"blog/{@entry.Id}";
+        var blogLink = $"blog/{@entry.Id}/{@entry.Url}";
         <NavLink href=@blogLink>
             <h5>@entry.Title</h5>
         </NavLink>

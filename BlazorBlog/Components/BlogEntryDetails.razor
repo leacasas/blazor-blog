@@ -1,4 +1,4 @@
-﻿@page "/blog/{id:int}"
+﻿@page "/blog/{id:int}/{url?}"
 
 @using BlazorBlog.Core.Entities
 @using BlazorBlog.Core.Interfaces
@@ -28,6 +28,9 @@ else
 @code {
     [Parameter]
     public int Id { get; set; }
+
+    [Parameter]
+    public string Url { get; set; }
 
     private BlogEntry? _blogEntry;
     private bool _entryNotFound = false;
